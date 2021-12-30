@@ -30,7 +30,7 @@ ggplot(final, aes(x=intentional_cause)) + geom_bar() + facet_wrap(~origin)
 # We can see in the graph that the most fires with "intentional_cause" have 
 # origin "firepit".
 
-# Relationship between "tmax" origin and "intentional_cause"
+# Relationship between "tmax", "origin" and "intentional_cause"
 ggplot(final, aes(x=tmax)) + geom_histogram() + 
   facet_grid(intentional_cause~origin)
 
@@ -47,13 +47,6 @@ ggplot(final, aes(x = village_area, y = village_veget_area)) + geom_point() +
 ggplot(final, aes(x = vegetation_area, y = farming_area)) + geom_point() + 
   facet_wrap(~intentional_cause)
 
-ggplot(final, aes(x = vegetation_area, y = village_veget_area)) + geom_point() + 
-  facet_wrap(~intentional_cause)
-
-
-# "vegetation_area" and "village_veget_area" seems to have a linear relationship
-ggplot(final, aes(x = farming_area, y = village_veget_area)) + geom_point() + 
-  facet_wrap(~intentional_cause)
 
 
 #is there a relationship between the area damaged and intentional_cause
