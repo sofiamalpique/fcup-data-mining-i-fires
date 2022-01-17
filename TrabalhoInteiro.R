@@ -7,6 +7,8 @@ require(devtools)
 library(zoo)
 library(data.table)
 library(ggplot2)
+library(ggpfortify)
+
 
 # Read the data.
 ds <- read_csv("fires_train.csv", na=c("-","NA"))
@@ -275,9 +277,6 @@ ggplot(final, aes(x=vegetation_area)) + geom_histogram(binwidth = 200) +
 ggplot(final, aes(x=farming_area)) + geom_histogram(binwidth = 200) + 
   facet_wrap(~intentional_cause)
 
-ggplot(final, aes(x=village_veget_area)) + geom_histogram(binwidth = 200) + 
-  facet_wrap(~intentional_cause)
-
 ggplot(final, aes(x=total_area)) + geom_histogram(binwidth = 200) + 
   facet_wrap(~intentional_cause)
 
@@ -289,6 +288,31 @@ final %>% select(tmax,village_area, farming_area,
 #is there any monotonic relationship
 final %>% select(tmax,village_area, village_veget_area, farming_area, 
                  vegetation_area, total_area) %>% cor(method = "spearman")
+
+
+#--------------------------------CLUSTERING-------------------------------------
+
+# In order to perform the clustering in our data we need the unlabeled data, 
+# which means, only the numeric features.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
